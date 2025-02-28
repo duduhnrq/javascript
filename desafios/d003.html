@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antes e Depois</title>
+    <style>
+        body {
+            padding: 0px;
+            margin: 0px;
+            background-color: rgb(110, 89, 121);
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            padding: 30px;
+            font-size: 15px;
+            font-weight: bold;
+            background-color: rgb(150, 109, 109);
+            color: white;
+            border-radius: 20px;
+            margin: 0 auto;
+            transition: all .3s ease-in-out;
+        }
+        
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Antes e Depois</h1>
+    <button onclick="clicou()">Antecessor e Sucessor</button>
+
+    <script>
+        function clicou() {
+            let num = window.prompt('Digite um número inteiro qualquer:')
+            num = Number(num)
+            window.alert(`Antes de ${num}, temos o número ${num - 1}. Depois de ${num}, temos o número ${num + 1}.`)
+        }
+    </script>
+</body>
+</html>

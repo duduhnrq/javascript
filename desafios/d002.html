@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Boas-vindas</title>
+    <style>
+        body {
+            padding: 0px;
+            margin: 0px;
+            background-color: rgb(88, 125, 167);
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            padding: 30px;
+            font-size: 15px;
+            font-weight: bold;
+            background-color: rgb(160, 151, 101);
+            color: white;
+            border-radius: 20px;
+            margin: 0 auto;
+            transition: all .3s ease-in-out;
+        }
+        
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Boas-vindas!</h1>
+    <button onclick="clicou()">Clique aqui para iniciar</button>
+
+    <script>
+        function clicou() {
+            let nome = window.prompt('Qual o seu nome?')
+            let idade = window.prompt(`Olá, ${nome}! Qual a sua idade?`)
+            window.alert(`Acabei de conhecer o(a) ${nome}, que tem ${idade} anos!`)
+        }    
+    </script>
+</body>
+</html>
