@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            font-family: sans-serif;
+            background-color: rgb(48, 48, 48);
+        }
+
+        .bloco {
+            text-align: center;
+        }
+        
+        .bloco h1 {
+            color: white;
+        }
+
+        .bloco button {
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 600;
+            color: white;
+            padding: 20px;
+            border: none;
+            width: 150px;
+            background-color: rgb(77, 148, 75);
+            transition: all .3s ease-in-out;
+        }
+
+        .bloco button:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="bloco">
+        <h1>Bem-vindo ao Exercício 1!</h1>
+        <button onclick="inicio()">Iniciar</button>
+
+        <script>
+            function inicio() {
+                let num1 = prompt('Digite um número:');
+                let num2 = prompt('Digite outro número:');
+                num1 = Number(num1);
+                num2 = Number(num2);
+
+                if (isNaN(num1) || isNaN(num2)) {
+                    alert("Por favor, digite números válidos!");
+                    return;
+                }
+
+                document.write(`Soma: ${num1 + num2} <br>`);
+                document.write(`Subtração: ${num1 - num2} <br>`);
+                document.write(`Multiplicação: ${num1 * num2} <br>`);
+                document.write(`Divisão: ${num1 / num2} <br>`);
+                document.write(`Resto da divisão: ${num1 % num2}`)
+            }
+        </script>
+    </div>
+</body>
+</html>
