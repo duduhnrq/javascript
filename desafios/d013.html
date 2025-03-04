@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situação do Aluno</title>
+    <style>
+        body {
+            color: black;
+            background-color: rgb(219, 219, 219);
+            font: normal 20px arial;
+        }
+
+        input {
+            cursor: pointer;
+            border: none;
+            padding: 30px;
+            font: bold 15px arial;
+            background-color: rgb(104, 121, 143);
+            color: white;
+            transition: all .3s ease;
+        }
+
+        input:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 3px 10px rgba(0, 0, 0 ,0.33);
+        }
+
+        div {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Situação do Aluno</h1>
+    <input type="button" value="Entrar com as notas" onclick="clicou()">
+    <p id="resultado">Clique no botão acima para informar as notas do aluno.</p>
+    <div id="resultado2"></div>
+    <div id="resultado3"></div>
+
+    <script>
+        function clicou() {
+            let nome = prompt('Qual é o nome do aluno(a)?');
+            let nota1 = prompt(`Primeira nota de ${nome}:`);
+            let nota2 = prompt(`Segunda nota de ${nome}:`);
+            nota1 = Number(nota1);
+            nota2 = Number(nota2);
+
+            if (isNaN(nota1)) {
+                window.alert('Por favor, digite uma nota válida!');
+                return;
+            }
+
+            let media = (nota1 + nota2) / 2
+
+            document.getElementById('resultado').innerHTML = `<strong>Analisando a situação de ${nome}:`
+
+            document.getElementById('resultado2').innerHTML = `Com as notas ${nota1.toLocaleString('pt-br')} e ${nota2.toLocaleString('pt-br')}, a média é ${media.toLocaleString('pt-br')}.`
+
+            if (media < 3) {
+                document.getElementById('resultado3').innerHTML = `Com a média abaixo de 3,0, o aluno está <span style="background-color: rgb(255, 106, 106); color: brown; text-transform: uppercase;font: bold 20px arial">reprovado</span>`
+            }
+
+            else if (media >= 3 && media < 6) {
+                document.getElementById('resultado3').innerHTML = `Com a média acima de 3,0 e abaixo de 6,0, o aluno está em <span style="background-color: rgb(255, 255, 141); color: rgb(199, 176, 48); text-transform: uppercase;font: bold 20px arial">recuperação</span>`
+            }
+
+            if (media >= 6) {
+                document.getElementById('resultado3').innerHTML = `Com a média acima de 6,0, o aluno está <span style="background-color: rgb(138, 255, 173); color: rgb(65, 146, 89); text-transform: uppercase;font: bold 20px arial">aprovado</span>`
+            }
+        }
+    </script>
+</body>
+</html>

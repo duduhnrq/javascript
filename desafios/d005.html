@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de medidas</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        button {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de medidas</h1>
+    <button onclick="clicou()">Converter</button>
+    <p id="resultado">Clique no botão acima para iniciar.</p>
+    <div id="resultado2"></div>
+
+    <script>
+        function clicou() {
+            let dist = prompt('Digite uma distância em metros (m):');
+            dist = Number(dist);
+
+            // Validação de entrada
+            if (isNaN(dist) || dist <= 0) {
+                window.alert('Por favor, digite uma distância válida!');
+                return;
+            }
+
+            document.getElementById('resultado').innerHTML = `<strong>A distância de ${dist.toLocaleString('pt-BR')} metros, corresponde a...</strong>`;
+
+            const km = (dist / 1000).toLocaleString('pt-BR');
+            const hm = (dist / 100).toLocaleString('pt-BR');
+            const dam = (dist / 10).toLocaleString('pt-BR');
+            const dm = (dist * 10).toLocaleString('pt-BR');
+            const cm = (dist * 100).toLocaleString('pt-BR');
+            const mm = (dist * 1000).toLocaleString('pt-BR');
+
+            document.getElementById('resultado2').innerHTML = `
+                ${km} quilômetros (Km) <br>
+                ${hm} hectômetros (Hm) <br>
+                ${dam} decâmetros (Dam) <br>
+                ${dm} decímetros (dm) <br>
+                ${cm} centímetros (cm) <br>
+                ${mm} milímetros (mm)`;
+        }
+    </script>
+</body>
+</html>
