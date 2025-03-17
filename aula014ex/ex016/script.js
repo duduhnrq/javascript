@@ -18,17 +18,10 @@ function clicou() {
     let res = document.getElementById('res');
 
     if (isNaN(valorInicio) || isNaN(valorFim) || isNaN(valorPasso)) {
-        res.innerHTML = '<p style="color: red">Por favor, digite números válidos!</p>';
-        return;
-    } 
-
-    if (valorPasso <= 0) {
-        res.innerHTML = '<p style="color: red">O valor do passo deve ser maior que zero!</p>';
+        res.innerHTML = '<p style="color: red">Por favor, preencha todos os campos!</p>';
         return;
     }
-
-    res.innerHTML = '';
-
+    
     let resultado = '';
 
     if (valorInicio < valorFim) {
