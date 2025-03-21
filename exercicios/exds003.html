@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Calculadora</p> <br>
+    <input type="button" value="Iniciar" onclick="inicio()">
+
+    <script>
+        function inicio() {
+            let n1 = prompt('Digite um número:')
+            let n2 = prompt('Digite outro número:')
+
+            n1 = Number(n1)
+            n2 = Number(n2)
+
+            if (n1 === 0 || n2 === 0) {
+                alert('Por favor, preencha todos os campos!')
+            } else {
+                alert(`Soma: ${n1 + n2}; Subtração: ${n1 - n2}; Divisão: ${(n1 / n2).toFixed(2)}; Multiplicação: ${n1 * n2}`)
+            }
+
+        }
+    </script>
+</body>
+</html>

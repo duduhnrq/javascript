@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Calculadora de números primos</h2><br>
+    <p>Digite um número: <input type="number" id="txtn"><input type="button" value="Iniciar" onclick="inicio()"></p>
+
+    <div id="res"></div>
+
+    <script>
+        function isPrime(num) {
+            if (num <= 1) return false;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false;
+            }
+            return true
+        }
+
+        
+        function inicio() {
+            let num = document.getElementById('txtn')
+            let res = document.getElementById('res')
+
+            if (num.value.length == 0) {
+                res.innerHTML = '<span style="color: red">[ERRO] Por favor, digite um número!</span>'
+            } else {
+                let n = Number(num.value)
+
+                if (isPrime(n)) {
+                    res.innerHTML = `<span style="color: green">${n} é um número primo!</span>`
+                } else {
+                    res.innerHTML = `<span style="color: blue">${n} não é um número primo!</span>`
+                }
+                
+            }
+        }
+    </script>
+</body>
+</html>

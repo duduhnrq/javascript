@@ -5,7 +5,7 @@ function contar() {
     let res = document.getElementById('res');
 
     if (ini.value.length == 0 || fim.value.length == 0 || passos.value.length == 0) {
-        res.innerHTML = '<p style="color: red">[ERRO] Faltam dados!</p>';
+        res.innerHTML = '<span style="color: red">[ERRO] Faltam dados!</span>';
     } else {
         res.innerHTML = 'Contando: <br>';
         let i = Number(ini.value);
