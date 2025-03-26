@@ -23,6 +23,10 @@ section div {
     color: black;
 }
 
+select {
+    width: 180px;
+}
+
 footer {
     text-align: center;
 }

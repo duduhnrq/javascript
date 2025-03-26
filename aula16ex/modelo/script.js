@@ -19,10 +19,10 @@ function add() {
         let item = document.createElement('option')
         item.text = `Número ${n1} adicionado`
         tab.appendChild(item)
-
-        num.value = ''
-        num.focus()
+        res.innerHTML = ''
     }
+    num.value = ''
+    num.focus()
 }
 
 function final() {
